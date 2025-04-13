@@ -26,8 +26,17 @@ module.exports = {
           'on-background': {
             light: '#191C1E',         // Text on light bg
             dark:  '#E6E9EF'           // Text on dark bg
-          }
-        }
+          },
+          "custom-border": {
+                light: "#E1E0E5"
+              }
+        },
+        fontFamily: {
+          // Custom Fonts
+          vazir: "Vazir",
+          
+        },
+
       }
     },
     // Enable dark mode variants

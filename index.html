@@ -10,6 +10,12 @@
         darkMode: "class",
         theme: {
           extend: {
+            fontFamily: {
+              vazir: "Vazir",
+            },
+            backgroundImage: {
+            'gradient-dark': 'linear-gradient(to bottom, #0267FF, #1A202C)',
+          },
             colors: {
               primary: {
                 light: "#2C7EF8", // Base primary
@@ -34,6 +40,9 @@
                 light: "#191C1E", // Text on light bg
                 dark: "#E6E9EF", // Text on dark bg
               },
+              "custom-border": {
+                light: "#E1E0E5"
+              }
             },
           },
         },
@@ -42,32 +51,32 @@
   </head>
 
   <body
-    class="bg-background-light dark:bg-background-dark font-sans text-gray-800"
+    class="bg-background-light dark:bg-background-dark text-gray-800 font-vazir"
   >
-    <header
+    <header class="text-base"
       
     >
-      <div class="flex justify-between items-center py-[24px] px-[104px] h-[40px] shadow">
+      <div class="flex justify-between items-center h-[68px] py-[24px] px-[104px]">
         <div class="flex justify-center items-center gap-[72px]">
-          <div class="text-lg font-bold whitespace-nowrap">کوئرا لیست</div>
+          <div class="text-xl font-bold whitespace-nowrap dark:text-primary-on-light font-vazir">کوئرا لیست</div>
           <nav class="space-x-6 space-x-reverse hidden md:flex gap-[72px]">
-            <a href="index.html" class="text-primary-light font-semibold">صفحه اصلی</a>
-            <a href="about.html">درباره ما</a>
-            <a href="contact.html">ارتباط با ما</a>
+            <a href="index.html" class="text-primary-light font-semibold hover:text-primary-hover-light">صفحه اصلی</a>
+            <a href="about.html" class="dark:text-primary-on-light hover:text-primary-hover-light">درباره ما</a>
+            <a href="contact.html" class="dark:text-primary-on-light hover:text-primary-hover-light">ارتباط با ما</a>
           </nav>
         </div>
   
         <div class="flex justify-center items-center gap-[16px] h-[40px]">
           <a
             href="#"
-            class="bg-primary-light text-primary-on-light  rounded pt-[8px] pr-[24px] pb-[8px] pl-[24px]"
+            class="bg-primary-light hover:bg-primary-hover-light text-primary-on-light  rounded-[6px] pt-[8px] pr-[24px] pb-[8px] pl-[24px]"
             >ورود به اپلیکیشن</a
           >
-          <button onclick="toggleDarkMode()" class="border rounded h-full w-[40px] flex justify-center items-center">
+          <button onclick="toggleDarkMode()" class="border-[1px] border-solid hover:bg-gray-200 border-[#E3E3E3] dark:border-[#2F3132] rounded-[6px] h-full w-[40px] flex justify-center items-center">
             <img src="./assets/icons/dark-outline.svg" class="items-center hidden dark:block h-[24px] w-[24px]" />
             <img
               src="./assets/icons/light-dark.svg"
-              class="block dark:hidden h-[24px] w-[24px]"
+              class="items-center block dark:hidden h-[24px] w-[24px]"
             />
           </button>
         </div>
@@ -75,9 +84,8 @@
     </header>
 
     <main>
-      <!-- Hero Section -->
-      <section class="text-center py-20 px-4 md:px-20 bg-[linear-gradient(to_bottom,#EBF3FF,#FFFFFF)]"">
-        <h2 class="text-2xl md:text-3xl mb-4 font-medium pt-[113.5px]">
+      <section class="text-center py-20 px-4 md:px-20 bg-[linear-gradient(to_bottom,#EBF3FF,#FFFFFF)] dark:bg-gradient-dark">
+        <h2 class="text-5xl md:text-3xl mb-4 pt-[113.5px]">
           تمرکز رو وارد زندگیت کن
         </h2>
         <h1 class="text-4xl md:text-5xl font-extrabold text-black mb-6">
@@ -92,12 +100,12 @@
         <div class="mt-10 flex justify-center gap-4">
           <a
             href="#"
-            class="bg-primary-light text-white px-6 py-3 rounded"
+            class="bg-primary-light hover:bg-primary-hover-light text-white px-6 py-3 rounded"
             >ورود به اپلیکیشن</a
           >
           <a
-            href="#"
-            class="bg-[#EBF3FE] text-primary-light border border-gray-300 text-gray-700 px-6 py-3 rounded hover:bg-primary-hover-light"
+            href="about.html"
+            class="bg-[#EBF3FE] text-primary-light border border-gray-300 px-6 py-3 rounded hover:bg-primary-hover-light hover:text-white"
             >درباره ما</a
           >
         </div>
@@ -107,61 +115,61 @@
         <img src="./assets/images/image 39129.svg" class=" w-[672px]"/>
 
         <section>
-          <div class="flex flex-col justify-center items-center mt-[124px]">
+          <div class="flex flex-col justify-between items-center mt-[124px] mx-0">
             <div>
-              <h2 class="text-2xl font-medium">ویژگی‌های اپلیکیشن کوئرالیست</h2>
-              <h3 class="mt-[12px]">ما توی تیم کوئرا لیست بر اساس بازخوردهای شما و جدیدترین ترندهای بازار همواره در تلاشیم تا بهترین تجربه کاربری رو براتون به ارمغان بیاریم.</h3>
+              <h2 class="text-5xl">ویژگی‌های اپلیکیشن کوئرالیست</h2>
+              <h3 class="mt-[50px]">ما توی تیم کوئرا لیست بر اساس بازخوردهای شما و جدیدترین ترندهای بازار<br> همواره در تلاشیم تا بهترین تجربه کاربری رو براتون به ارمغان بیاریم.</h3>
             </div>
   
-            <div class="flex mt-[40px] justify-between items-center">
-              <div class="px-[21.5px] py-[32px] border-[1px] border-solid border-black rounded-[24px]">
+            <div class="flex mt-[40px] justify-between items-center gap-[24px]">
+              <div class="px-[21.5px] py-[32px] border-[1px] border-solid border-custom-border-light rounded-[24px] h-[200px]">
                 <img
-                  src="./assets/images/Frame 427321293.svg"
+                  src="./assets/icons/brush.svg"
                   alt="Feature 1"
                   class="mx-auto mb-4"
                 />
-                <h4 class="text-lg font-semibold">رابط کاربری جذاب</h4>
-                <p class="text-gray-600">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
+                <h4 class="text-lg font-semibold  mt-[16px]">رابط کاربری جذاب</h4>
+                <p class="text-gray-600 mt-[12px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
               </div>
     
-              <div class="px-[21.5px] py-[32px] border-[1px] border-solid border-black rounded-[24px]">
+              <div class="px-[21.5px] py-[32px] border-[1px] border-solid border-custom-border-light rounded-[24px] h-[200px]">
                 <img
                   src="./assets/icons/category.svg"
                   alt="Feature 1"
                   class="mx-auto mb-4"
                 />
-                <h4 class="text-lg font-semibold">قابلیت دسته‌بندی کارها</h4>
-                <p class="text-gray-600">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
+                <h4 class="text-lg font-semibold  mt-[16px]">قابلیت دسته‌بندی کارها</h4>
+                <p class="text-gray-600 mt-[12px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
               </div>
     
-              <div class="px-[21.5px] py-[32px] border-[1px] border-solid border-black rounded-[24px]">
+              <div class="px-[21.5px] py-[32px] border-[1px] border-solid border-custom-border-light rounded-[24px] h-[200px]">
                 <img
                   src="./assets/icons/location-tick.svg"
                   alt="Feature 1"
                   class="mx-auto mb-4"
                 />
-                <h4 class="text-lg font-semibold">دسترسی آسان</h4>
-                <p class="text-gray-600">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
+                <h4 class="text-lg font-semibold  mt-[16px]">دسترسی آسان</h4>
+                <p class="text-gray-600 mt-[12px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
               </div>
     
-              <div class="px-[21.5px] py-[32px] border-[1px] border-solid border-black rounded-[24px]">
+              <div class="px-[21.5px] py-[32px] border-[1px] border-solid border-custom-border-light rounded-[24px] h-[200px]">
                 <img
                   src="./assets/icons/user-tag.svg"
                   alt="Feature 1"
                   class="mx-auto mb-4"
                 />
-                <h4 class="text-lg font-semibold">پشتیبانی آنلاین</h4>
-                <p class="text-gray-600">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
+                <h4 class="text-lg font-semibold  mt-[16px]">پشتیبانی آنلاین</h4>
+                <p class="text-gray-600 mt-[12px]">اگه از سردرگمی و بی برنامگی خسته شدی این اپلیکیشن مخصوص خودته!</p>
               </div>
         </section>
        
 
       <section class="flex mt-[124px]">
-        <div class="flex-1">
+        <div class="flex-1 text-right flex flex-col justify-between py-[18.5px] pl-[42px]">
           <div>
-            <h2>اپلیکیشن اندروید</h2>
-            <h1>دانلود اپلیکیشن</h1>
-            <p>
+            <h2 class="text-xl">اپلیکیشن اندروید و IOS</h2>
+            <h1 class="text-5xl mt-[10px]">دانلود اپلیکیشن</h1>
+            <p class="mt-[20px] text-base">
               کاربران اندروید می‌توانند اپلیکیشن کوئرالیست را از استورهای معتبر
               اندروید دانلود نمایند. همچنین کاربران سیستم عامل اپل علاوه بر
               دانلود نرم‌افزار از اپل‌استور می‌توانند از نسخه مبتنی بر وب آن
@@ -170,8 +178,8 @@
               نمایند.
             </p>
           </div>
-          <div class="flex">
-            <a>ورود به اپلیکیشن</a>
+          <div class="flex mt-auto items-center gap-[8px]">
+            <a class="text-primary-light">ورود به اپلیکیشن</a>
             <img src="./assets/images/arrow-right.svg" />
           </div>
         </div>
@@ -184,83 +192,100 @@
         </div>
         </section>
 
-        <section class="flex flex-col justify-center mt-[124px]">
+        
+        <section class="flex flex-col justify-center mt-[124px] mx-[160px]">
           <div class="text-center">
-            <h2>نظرات کابران</h2>
-            <p class="mt-[16px]">
+            <h2 class="text-2xl font-medium">نظرات کاربران</h2>
+            <p class="mt-4 text-gray-600">
               بیش از یک دهه است که کوئرا لیست به مردم در سراسر جهان کمک می‌کند تا
               سازماندهی شوند و به اهداف خود برسند.
             </p>
           </div>
-  
-          <div class="grid grid-rows-2 grid-cols-3 mt-[48px]">
-            <div class="flex flex-col justify-center">
-              <img
-                src="./assets/images/Frame 427321293.svg"
-                alt="User Review"
-                class="mx-auto mb-4"
-              />
-              <h4 class="text-lg font-semibold">نظرات کاربران</h4>
-              <p class="text-gray-600">توضیحات نظرات کاربران</p>
+        
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            <div class="border border-custom-border-light rounded-lg p-6">
+              <div class="flex items-center gap-4 mb-4">
+                <img src="./assets/images/Ellipse 135.svg" class="w-12 h-12"/>
+                <div class="text-right">
+                  <h4 class="font-semibold">رویا ملکی</h4>
+                  <p class="text-gray-600 text-sm">مهندس نرم افزار دیجی‌کالا</p>
+                </div>
+              </div>
+              <p class="text-gray-700">
+                تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.
+              </p>
             </div>
-  
-            <div class="flex justify-center">
-              <img
-                src="./assets/images/Frame 427321293.svg"
-                alt="User Review"
-                class="mx-auto mb-4"
-              />
-              <h4 class="text-lg font-semibold">نظرات کاربران</h4>
-              <p class="text-gray-600">توضیحات نظرات کاربران</p>
+        
+            <div class="border border-custom-border-light rounded-lg p-6">
+              <div class="flex items-center gap-4 mb-4">
+                <img src="./assets/images/Ellipse 135.svg" class="w-12 h-12"/>
+                <div class="text-right">
+                  <h4 class="font-semibold">رویا ملکی</h4>
+                  <p class="text-gray-600 text-sm">مهندس نرم افزار دیجی‌کالا</p>
+                </div>
+              </div>
+              <p class="text-gray-700">
+                تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که سریع‌تر باشیم.
+              </p>
             </div>
-  
-            <div class="flex justify-center">
-              <img
-                src="./assets/images/Frame 427321293.svg"
-                alt="User Review"
-                class="mx-auto mb-4"
-              />
-              <h4 class="text-lg font-semibold">نظرات کاربران</h4>
-              <p class="text-gray-600">توضیحات نظرات کاربران</p>
+        
+            <div class="border border-custom-border-light rounded-lg p-6">
+              <div class="flex items-center gap-4 mb-4">
+                <img src="./assets/images/Ellipse 135.svg" class="w-12 h-12"/>
+                <div class="text-right">
+                  <h4 class="font-semibold">رویا ملکی</h4>
+                  <p class="text-gray-600 text-sm">مهندس نرم افزار دیجی‌کالا</p>
+                </div>
+              </div>
+              <p class="text-gray-700">
+                تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.              </p>
             </div>
-  
-            <div class="flex justify-center">
-              <img
-                src="./assets/images/Frame 427321293.svg"
-                alt="User Review"
-                class="mx-auto mb-4"
-              />
-              <h4 class="text-lg font-semibold">نظرات کاربران</h4>
-              <p class="text-gray-600">توضیحات نظرات کاربران</p>
+        
+            <div class="border border-custom-border-light rounded-lg p-6">
+              <div class="flex items-center gap-4 mb-4">
+                <img src="./assets/images/Ellipse 135.svg" class="w-12 h-12"/>
+                <div class="text-right">
+                  <h4 class="font-semibold">رویا ملکی</h4>
+                  <p class="text-gray-600 text-sm">مهندس نرم افزار دیجی‌کالا</p>
+                </div>
+              </div>
+              <p class="text-gray-700">
+                تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که سریع‌تر باشیم.
+              </p>
             </div>
-  
-            <div class="flex justify-center">
-              <img
-                src="./assets/images/Frame 427321293.svg"
-                alt="User Review"
-                class="mx-auto mb-4"
-              />
-              <h4 class="text-lg font-semibold">نظرات کاربران</h4>
-              <p class="text-gray-600">توضیحات نظرات کاربران</p>
+        
+            <div class="border border-custom-border-light rounded-lg p-6">
+              <div class="flex items-center gap-4 mb-4">
+                <img src="./assets/images/Ellipse 135.svg" class="w-12 h-12"/>
+                <div class="text-right">
+                  <h4 class="font-semibold">رویا ملکی</h4>
+                  <p class="text-gray-600 text-sm">مهندس نرم افزار دیجی‌کالا</p>
+                </div>
+              </div>
+              <p class="text-gray-700">
+                تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که باهوش‌تر، سریع‌تر و سازمان دهی شده تر زندگی کنیم و هم چینین همه چیز به گونه‌ای ساده تنظیم شده و میتونیم از یکپارچگی اطلاعات و دیتاها لذت ببریم.              </p>
             </div>
-  
-            <div class="flex justify-center">
-              <img
-                src="./assets/images/Frame 427321293.svg"
-                alt="User Review"
-                class="mx-auto mb-4"
-              />
-              <h4 class="text-lg font-semibold">نظرات کاربران</h4>
-              <p class="text-gray-600">توضیحات نظرات کاربران</p>
+        
+            <div class="border border-custom-border-light rounded-lg p-6">
+              <div class="flex items-center gap-4 mb-4">
+                <img src="./assets/images/Ellipse 135.svg" class="w-12 h-12"/>
+                <div class="text-right">
+                  <h4 class="font-semibold">رویا ملکی</h4>
+                  <p class="text-gray-600 text-sm">مهندس نرم افزار دیجی‌کالا</p>
+                </div>
+              </div>
+              <p class="text-gray-700">
+                تجربه من با کوئرا لیست زندگی من رو تغییر داده است. من از دنیایی اومدم که همه چیز من در اکسل بود. استفاده از کوئرا لیست به ما این امکان رو می‌دهد که سازمان‌یافته‌تر باشیم.
+              </p>
             </div>
           </div>
-  
-          <div class="flex justify-center mt-[48px] gap-[24px]">
-            <button class="bg-[#FFFFFF ] border-[1px] border-solid border-[#E3E6E8] rounded-[6px]">
-              <img src="./assets/images/arrow-rightoutline.svg" />
+        
+          <div class="flex justify-center items-center mt-12 gap-6">
+            <button class="bg-background-light border border-custom-border-light rounded-lg p-3 hover:bg-gray-200">
+              <img src="./assets/images/arrow-rightoutline.svg" class="w-5 h-5"/>
             </button>
-            <button class="bg-[#FFFFFF] border-[1px] border-solid border-[#E3E6E8] rounded-[6px]">
-              <img src="./assets/images/arrow-left-outline.svg" />
+            <button class="bg-background-light border border-custom-border-light rounded-lg p-3 hover:bg-gray-200">
+              <img src="./assets/images/arrow-left-outline.svg" class="w-5 h-5"/>
             </button>
           </div>
         </section>
@@ -269,68 +294,55 @@
 
     </main>
 
-    <footer class="flex flex-col justify-center items-center mt-[120px]">
-      <div>
-        <div class="flex justify-center items-center w-full max-w-md px-4">
-          <!-- Left line -->
-          <div class="flex-grow h-px bg-[#AFAFAF] w-[223px]"></div>
-  
-          <!-- Centered text -->
-          <div
-            class="px-4 text-center text-gray-700 font-medium whitespace-nowrap"
-          >
+    <footer class="w-full mt-[120px] px-[160px] pb-[48px]">
+      <div class="flex justify-center items-center w-full px-4">
+        <!-- Left line -->
+        <div class="flex-grow h-px bg-[#AFAFAF]"></div>
+        
+        <!-- Centered text -->
+        <div class="px-4 text-center text-gray-700 font-medium whitespace-nowrap">
           کوئرا لیست
-          </div>
-  
-          <!-- Right line -->
-          <div class="flex-grow h-px bg-[#AFAFAF] w-[223px]"></div>
         </div>
-  
-        <div class="flex items-start mt-[48px]">
-          <div class="flex flex-col mr-[160px]">
-            <div class="flex">
-              <img src="./assets/images/fluent_fax-20-filled.svg" />
-              <p>فکس: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
-            </div>
-  
-            <div class="flex">
-              <img src="./assets/icons/call_bold.svg" />
-              <p>تلفن پشتیبانی: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
-            </div>
-  
-            <div class="flex">
-              <img src="./assets/images/fluent_fax-20-filled.svg" />
-              <p>آدرس دفتر مرکزی: پونک - خیابان اشرفی اصفهانی - خیابان صبحدل- بن بست شب بو</p>
-            </div>
+        
+        <!-- Right line -->
+        <div class="flex-grow h-px bg-[#AFAFAF]"></div>
+      </div>
+
+      <div class="flex justify-between mt-[48px]">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-2">
+            <img src="./assets/images/fluent_fax-20-filled.svg" class="w-5 h-5"/>
+            <p>فکس: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
           </div>
-  
-          <div class="ml-[160px]">
-            <h4>با ما در ارتباط باش</h4>
-            <p>
-              اگه میخوای اولین نفری باشی که از فیچرهای جدید و تخفیفات با خبر بشی.
-            </p>
-  
-            <div
-            class="bg-gray-100 min-h-screen flex items-center justify-center p-4"
-          >
-            <div
-              class="bg-white p-2 rounded-lg shadow-md flex items-center gap-2"
-            >
-              <div class="flex-1">
-                <input
-                  type="email"
-                  class="w-full pr-10 pl-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="ايميل"
-                />
-              </div>
-              <button
-                class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200"
-              >
-                ارسال
-              </button>
-            </div>
+          
+          <div class="flex items-center gap-2">
+            <img src="./assets/icons/call_bold.svg" class="w-5 h-5"/>
+            <p>تلفن پشتیبانی: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
           </div>
+          
+          <div class="flex items-center gap-2">
+            <img src="./assets/images/fluent_fax-20-filled.svg" class="w-5 h-5"/>
+            <p>آدرس دفتر مرکزی: پونک - خیابان اشرفی اصفهانی - خیابان صبحدل- بن بست شب بو</p>
           </div>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <h4 class="font-bold">با ما در ارتباط باش</h4>
+          <p class="max-w-md">
+            اگه میخوای اولین نفری باشی که از فیچرهای جدید و تخفیفات با خبر بشی.
+          </p>
+          
+          <div class="flex items-center gap-2 bg-white p-2 border border-gray-500 rounded-2xl focus:outline-none">
+            <input
+              type="email"
+              class="w-full pr-10 pl-4 py-2"
+              placeholder="ایمیل"
+            />
+            <button class="bg-primary-light text-white py-2 px-4 rounded-lg">
+              ارسال
+            </button>
+          </div>
+        </div>
       </div>
       
       <div class="mt-[48px] text-center">

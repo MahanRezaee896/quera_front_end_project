@@ -4,7 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: "#2C7EF8", // Base primary
+                dark: "#3A86F8",
+                hover: {
+                  light: "#075CD9", // Light mode hover
+                  dark: "#6BA4FA", // Dark mode hover
+                },
+                "on-light": "#FFFFFF", // Text on primary-light
+              },
 
+              // Background & Surface (Light & Dark)
+              background: {
+                light: "#FFFFFF", // Light background
+                dark: "#040810", // Dark background
+              },
+              surface: {
+                light: "#FFFFFF", // Light surface (cards)
+                dark: "#E6E9EF", // Dark surface (cards)
+              },
+              "on-background": {
+                light: "#191C1E", // Text on light bg
+                dark: "#E6E9EF", // Text on dark bg
+              },
+            },
+          },
+        },
+      };
+    </script>
     <title>درباره من</title>
   </head>
   <body>
@@ -28,14 +61,18 @@
           class="bg-blue-500 text-white text-sm px-4 py-2 rounded hover:bg-blue-600"
           >ورود به اپلیکیشن</a
         >
-        <button class="p-2">
-          <img src="./assets/images/Frame 1000005337.svg" />
+        <button onclick="toggleDarkMode()" class="border rounded h-full w-[40px] flex justify-center items-center">
+          <img src="./assets/icons/dark-outline.svg" class="items-center hidden dark:block h-[24px] w-[24px]" />
+          <img
+            src="./assets/icons/light-dark.svg"
+            class="block dark:hidden h-[24px] w-[24px]"
+          />
         </button>
       </div>
     </header>
 
-    <main class="flex">
-      <div class="flex flex-col">
+    <main class="flex justify-start mt-[116px]">
+      <div class="flex-1 flex-col">
         <h1>درباره من</h1>
         <h2>محمد محمدی</h2>
         <p>
@@ -52,98 +89,125 @@
         </p>
       </div>
 
-      <div class="flex flex-col">
-        <img src="./assets/images/Frame 427321285.svg"/>
-        <div class="grid grid-rows-2 grid-cols-2">
+        <div>
+          <img src="./assets/images/Frame 427321285.svg"/>
+          <div class="grid grid-rows-2 grid-cols-2 mt-[24px]">
+            <div>
+              <div>
+                <h1>1379</h1>
+                <h2>سال تولد</h2>
+            </div>
+            
             <div>
                 <h1>تهران</h1>
                 <h2>محل زندگی</h2>
             </div>
 
             <div>
-                <h1>تهران</h1>
-                <h2>محل زندگی</h2>
+                <h1>3.5</h1>
+                <h2>سال تجربه کار</h2>
             </div>
 
-            <div>
-                <h1>تهران</h1>
-                <h2>محل زندگی</h2>
-            </div>
 
             <div>
-                <h1>تهران</h1>
-                <h2>محل زندگی</h2>
+                <h1>+10</h1>
+                <h2>مشارکت در پروژه</h2>
             </div>
+          </div>
         </div>
       </div>
     </main>
 
-    <footer class="flex flex-col justify-center items-center">
-      <div class="flex justify-center items-center w-full max-w-md px-4">
-        <!-- Left line -->
-        <div class="flex-grow h-px bg-gray-300"></div>
-
-        <!-- Centered text -->
-        <div
-          class="px-4 text-center text-gray-700 font-medium whitespace-nowrap"
-        >
-          Your Text Here
-        </div>
-
-        <!-- Right line -->
-        <div class="flex-grow h-px bg-gray-300"></div>
-      </div>
-
-      <div class="flex items-start">
-        <div class="flex flex-col">
-          <div class="flex">
-            <img src="./assets/images/fluent_fax-20-filled.svg" />
-            <p>فکس: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
-          </div>
-
-          <div class="flex">
-            <img src="./assets/images/fluent_fax-20-filled.svg" />
-            <p>فکس: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
-          </div>
-
-          <div class="flex">
-            <img src="./assets/images/fluent_fax-20-filled.svg" />
-            <p>فکس: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
-          </div>
-        </div>
-
-        <div>
-          <h4>با ما در ارتباط باش</h4>
-          <p>
-            اگه میخوای اولین نفری باشی که از فیچرهای جدید و تخفیفات با خبر بشی.
-          </p>
-        </div>
-
-        <div
-          class="bg-gray-100 min-h-screen flex items-center justify-center p-4"
-        >
-          <div
-            class="bg-white p-2 rounded-lg shadow-md flex items-center gap-2"
-          >
-            <div class="relative flex-1">
-              <input
-                type="email"
-                class="w-full pr-10 pl-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="ايميل"
-              />
-            </div>
-            <button
-              class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200"
-            >
-              ارسال
-            </button>
-          </div>
-        </div>
-      </div>
-
+    <footer class="flex flex-col justify-center items-center mt-[71px]">
       <div>
+        <div class="flex justify-center items-center w-full max-w-md px-4">
+          <!-- Left line -->
+          <div class="flex-grow h-px bg-[#AFAFAF] w-[223px]"></div>
+  
+          <!-- Centered text -->
+          <div
+            class="px-4 text-center text-gray-700 font-medium whitespace-nowrap"
+          >
+          کوئرا لیست
+          </div>
+  
+          <!-- Right line -->
+          <div class="flex-grow h-px bg-[#AFAFAF] w-[223px]"></div>
+        </div>
+  
+        <div class="flex items-start mt-[48px]">
+          <div class="flex flex-col mr-[160px]">
+            <div class="flex">
+              <img src="./assets/images/fluent_fax-20-filled.svg" />
+              <p>فکس: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
+            </div>
+  
+            <div class="flex">
+              <img src="./assets/icons/call_bold.svg" />
+              <p>تلفن پشتیبانی: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
+            </div>
+  
+            <div class="flex">
+              <img src="./assets/images/fluent_fax-20-filled.svg" />
+              <p>آدرس دفتر مرکزی: پونک - خیابان اشرفی اصفهانی - خیابان صبحدل- بن بست شب بو</p>
+            </div>
+          </div>
+  
+          <div class="ml-[160px]">
+            <h4>با ما در ارتباط باش</h4>
+            <p>
+              اگه میخوای اولین نفری باشی که از فیچرهای جدید و تخفیفات با خبر بشی.
+            </p>
+  
+            <div
+            class="bg-gray-100 min-h-screen flex items-center justify-center p-4"
+          >
+            <div
+              class="bg-white p-2 rounded-lg shadow-md flex items-center gap-2"
+            >
+              <div class="flex-1">
+                <input
+                  type="email"
+                  class="w-full pr-10 pl-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="ايميل"
+                />
+              </div>
+              <button
+                class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200"
+              >
+                ارسال
+              </button>
+            </div>
+          </div>
+          </div>
+      </div>
+      
+      <div class="mt-[48px] text-center">
         <p>تمامی حقوق مادی و معنوی این سایت متعلق به کوئرا لیست می‌باشد.</p>
       </div>
     </footer>
   </body>
+  <script>
+    // Check for saved user preference or system preference
+    if (
+      localStorage.getItem("color-theme") === "dark" ||
+      (!localStorage.getItem("color-theme") &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+    // Toggle function
+    function toggleDarkMode() {
+      if (document.documentElement.classList.contains("dark")) {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("color-theme", "light");
+      } else {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("color-theme", "dark");
+      }
+    }
+  </script>
 </html>
