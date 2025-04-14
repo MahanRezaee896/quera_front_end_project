@@ -1,53 +1,121 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" class="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <title>تماس با من</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              vazir: "Vazir",
+            },
+            backgroundImage: {
+              "gradient-dark": "linear-gradient(to bottom, #0267FF, #1A202C)",
+            },
+            colors: {
+              primary: {
+                light: "#2C7EF8",
+                dark: "#3A86F8",
+                hover: {
+                  light: "#075CD9",
+                  dark: "#6BA4FA",
+                },
+                "on-light": "#FFFFFF",
+              },
+              background: {
+                light: "#FFFFFF",
+                dark: "#040810",
+              },
+              surface: {
+                light: "#FFFFFF",
+                dark: "#E6E9EF",
+              },
+              "on-background": {
+                light: "#191C1E",
+                dark: "#E6E9EF",
+              },
+              "custom-border": {
+                light: "#E1E0E5",
+              },
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
-    <header
-      class="flex justify-between items-center p-4 md:p-6 bg-white shadow"
-    >
-      <!-- Right Side: Logo + Nav -->
-      <div class="flex items-center gap-10">
-        <div class="text-lg font-bold whitespace-nowrap">کوئرا لیست</div>
-        <nav class="space-x-6 space-x-reverse hidden md:flex">
-          <a href="#" class="text-blue-600 font-semibold">صفحه اصلی</a>
-          <a href="#" class="hover:text-blue-600">درباره ما</a>
-          <a href="#" class="hover:text-blue-600">ارتباط با ما</a>
-        </nav>
-      </div>
 
-      <!-- Left Side: Theme + Login -->
-      <div class="flex items-center gap-2">
-        <a
-          href="#"
-          class="bg-blue-500 text-white text-sm px-4 py-2 rounded hover:bg-blue-600"
-          >ورود به اپلیکیشن</a
-        >
-        <button class="p-2">
-          <img src="./assets/images/Frame 1000005337.svg" />
-        </button>
+  <body class="bg-background-light dark:bg-background-dark text-gray-800 font-vazir min-h-screen">
+    <header class="text-base">
+      <div
+        class="flex justify-between items-center h-[68px] py-[24px] px-4 md:px-[104px]"
+      >
+        <div class="flex justify-center items-center gap-4 md:gap-[72px]">
+          <div
+            class="text-xl font-bold whitespace-nowrap dark:text-primary-on-light font-vazir"
+          >
+            کوئرا لیست
+          </div>
+          <nav class="hidden md:flex gap-[72px]">
+            <a
+              href="index.html"
+              class="text-primary-light font-semibold hover:text-primary-hover-light"
+              >صفحه اصلی</a
+            >
+            <a
+              href="about.html"
+              class="dark:text-primary-on-light hover:text-primary-hover-light"
+              >درباره ما</a
+            >
+            <a
+              href="contact.html"
+              class="dark:text-primary-on-light hover:text-primary-hover-light"
+              >ارتباط با ما</a
+            >
+          </nav>
+        </div>
+
+        <div class="flex justify-center items-center gap-[16px] h-[40px]">
+          <a
+            href="#"
+            class="bg-primary-light hover:bg-primary-hover-light text-primary-on-light rounded-[6px] pt-[8px] pr-[16px] pb-[8px] pl-[16px] md:pr-[24px] md:pl-[24px]"
+            >ورود به اپلیکیشن</a
+          >
+          <button
+            onclick="toggleDarkMode()"
+            class="border-[1px] border-solid hover:bg-gray-200 border-[#E3E3E3] dark:border-[#2F3132] rounded-[6px] h-full w-[40px] flex justify-center items-center"
+          >
+            <img
+              src="./assets/icons/dark-outline.svg"
+              class="items-center hidden dark:block h-[24px] w-[24px]"
+            />
+            <img
+              src="./assets/icons/light-dark.svg"
+              class="items-center block dark:hidden h-[24px] w-[24px]"
+            />
+          </button>
+        </div>
       </div>
     </header>
 
-    <main class="flex">
-      <div>
-        <h1>تماس با ما</h1>
-        <p>چیزی هست که بخوای ازم بپرسی؟ خوشحال میشم بتونم بهت کمکی کنم.</p>
-        <div class="flex">
-          <img src="./assets/icons/call.svg" alt="phone" />
-          <p>0912 1234567</p>
+    <main class="flex mt-[50px] px-[160px] relative">
+      <div class="flex-1">
+        <h1 class="text-5xl font-extrabold mt-[20px]">تماس با من</h1>
+        <p class="mt-[30px] text-gray-500">چیزی هست که بخوای ازم بپرسی؟ خوشحال میشم بتونم بهت کمکی کنم.</p>
+        <div class="flex mt-[30px]">
+          <img src="./assets/icons/call.svg" alt="phone" class="ml-[15px]"/>
+          <p class="">09121234567</p>
         </div>
 
-        <div class="flex">
-          <img src="./assets/icons/sms.svg" alt="sms" />
+        <div class="flex mt-[30px]">
+          <img src="./assets/icons/sms.svg" alt="sms" class="ml-[15px]" />
           <p>QueraList@gmail.com</p>
         </div>
 
-        <div class="flex">
+        <div class="flex absolute bottom-0 mb-[30px] gap-[32px]">
           <img src="./assets/icons/mark-github.svg" />
           <img src="./assets/icons/twitter.svg" />
           <img src="./assets/icons/linkedin.svg" />
@@ -57,12 +125,10 @@
       <div class="w-px bg-black my-6"></div>
 
       <div class="flex-1 p-8">
-        <h1 class="text-2xl font-bold text-gray-800 mb-6">تماس با من</h1>
-
         <form class="space-y-4">
           <div class="grid grid-cols-2 gap-4">
             <div>
-              <label class="block text-sm text-gray-500 mb-1">نام</label>
+              <label class="block text-sm text-gray-500 mb-1"><span>نام:</span></label>
               <input
                 type="text"
                 placeholder="نام شما"
@@ -71,7 +137,7 @@
             </div>
             <div>
               <label class="block text-sm text-gray-500 mb-1"
-                >نام خانوادگی</label
+                ><span>نام خانوادگی:</span></label
               >
               <input
                 type="text"
@@ -82,7 +148,7 @@
           </div>
 
           <div>
-            <label class="block text-sm text-gray-500 mb-1">ایمیل</label>
+            <label class="block text-sm text-gray-500 mb-1"><span>ایمیل:</span></label>
             <input
               type="email"
               placeholder="ایمیل شما"
@@ -91,16 +157,16 @@
           </div>
 
           <div>
-            <label class="block text-sm text-gray-500 mb-1">شماره تماس</label>
+            <label class="block text-sm text-gray-500 mb-1"><span>شماره تماس:</span></label>
             <input
               type="tel"
               placeholder="شماره تماس شما"
-              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder:text-right"
             />
           </div>
 
           <div>
-            <label class="block text-sm text-gray-500 mb-1">متن پیام</label>
+            <label class="block text-sm text-gray-500 mb-1"><span>متن پیام:</span></label>
             <textarea
               rows="4"
               placeholder="متن پیام شما"
@@ -120,72 +186,92 @@
       <div></div>
     </main>
 
-    <footer class="flex flex-col justify-center items-center">
-      <div class="flex justify-center items-center w-full max-w-md px-4">
-        <!-- Left line -->
-        <div class="flex-grow h-px bg-gray-300"></div>
-
-        <!-- Centered text -->
+    <footer class="w-full mt-12 md:mt-[120px] px-4 md:px-[160px] pb-[48px]">
+      <div class="flex justify-center items-center w-full px-4">
+        <div class="flex-grow h-px bg-[#AFAFAF]"></div>
         <div
           class="px-4 text-center text-gray-700 font-medium whitespace-nowrap"
         >
-          Your Text Here
+          کوئرا لیست
         </div>
-
-        <!-- Right line -->
-        <div class="flex-grow h-px bg-gray-300"></div>
+        <div class="flex-grow h-px bg-[#AFAFAF]"></div>
       </div>
 
-      <div class="flex items-start">
-        <div class="flex flex-col">
-          <div class="flex">
-            <img src="./assets/images/fluent_fax-20-filled.svg" />
-            <p>فکس: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
+      <div
+        class="flex flex-col md:flex-row justify-between mt-8 md:mt-[48px] gap-8"
+      >
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-2">
+            <img
+              src="./assets/images/fluent_fax-20-filled.svg"
+              class="w-5 h-5"
+            />
+            <p class="text-sm md:text-base">فکس: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
           </div>
 
-          <div class="flex">
-            <img src="./assets/images/fluent_fax-20-filled.svg" />
-            <p>فکس: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
+          <div class="flex items-center gap-2">
+            <img src="./assets/icons/call_bold.svg" class="w-5 h-5" />
+            <p class="text-sm md:text-base">تلفن پشتیبانی: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
           </div>
 
-          <div class="flex">
-            <img src="./assets/images/fluent_fax-20-filled.svg" />
-            <p>فکس: ۴۴۴۴۵۵۶۶ - ۰۲۱</p>
+          <div class="flex items-center gap-2">
+            <img
+              src="./assets/images/fluent_fax-20-filled.svg"
+              class="w-5 h-5"
+            />
+            <p class="text-sm md:text-base">
+              آدرس دفتر مرکزی: پونک - خیابان اشرفی اصفهانی - خیابان صبحدل- بن
+              بست شب بو
+            </p>
           </div>
         </div>
 
-        <div>
-          <h4>با ما در ارتباط باش</h4>
-          <p>
+        <div class="flex flex-col gap-4">
+          <h4 class="font-bold">با ما در ارتباط باش</h4>
+          <p class="max-w-md text-sm md:text-base">
             اگه میخوای اولین نفری باشی که از فیچرهای جدید و تخفیفات با خبر بشی.
           </p>
-        </div>
 
-        <div
-          class="bg-gray-100 min-h-screen flex items-center justify-center p-4"
-        >
           <div
-            class="bg-white p-2 rounded-lg shadow-md flex items-center gap-2"
+            class="flex items-center gap-2 bg-white p-2 border border-gray-500 rounded-2xl"
           >
-            <div class="relative flex-1">
-              <input
-                type="email"
-                class="w-full pr-10 pl-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="ايميل"
-              />
-            </div>
-            <button
-              class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200"
-            >
+            <input
+              type="email"
+              class="w-full pr-10 pl-4 py-2"
+              placeholder="ایمیل"
+            />
+            <button class="bg-primary-light text-white py-2 px-4 rounded-lg">
               ارسال
             </button>
           </div>
         </div>
       </div>
 
-      <div>
+      <div class="mt-8 md:mt-[48px] text-center text-sm md:text-base">
         <p>تمامی حقوق مادی و معنوی این سایت متعلق به کوئرا لیست می‌باشد.</p>
       </div>
     </footer>
   </body>
+
+  <script>
+    if (
+      localStorage.getItem("color-theme") === "dark" ||
+      (!localStorage.getItem("color-theme") &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+    function toggleDarkMode() {
+      if (document.documentElement.classList.contains("dark")) {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("color-theme", "light");
+      } else {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("color-theme", "dark");
+      }
+    }
+  </script>
 </html>
